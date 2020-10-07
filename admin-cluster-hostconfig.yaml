@@ -1,0 +1,24 @@
+hostconfig:
+  dns: 172.16.10.1
+  tod: ntp.ubuntu.com # NTP Server
+  otherdns:
+  - 8.8.8.8
+  - 8.8.4.4
+  othertod:
+  - ntp.ubuntu.com
+  searchdomainsfordns:
+  - "gkeonprem.local"
+blocks:
+  - netmask: 255.255.255.0 
+    gateway: 172.16.10.1 # DFGW for nodes
+    ips:
+    - ip: 172.16.10.101 # Admin control plane
+      hostname: host1   # will be trimmed to host1
+    - ip: 172.16.10.102 # Admin addon1
+      hostname: host2   # will be trimmed to host2
+    - ip: 172.16.10.103 # Admin addon2
+      hostname: host3   # will be trimmed to host3
+    - ip: 172.16.10.104 # temporary node for cluster upgrade
+      hostname: host4   # will be trimmed to host4
+    - ip: 172.16.10.105 # User cluster’s control plane
+      hostname: host5   # will be trimmed to host5

@@ -1,0 +1,18 @@
+hostconfig:
+  dns: "172.16.10.1"
+  tod: "ntp.ubuntu.com"
+  otherdns:
+  - "8.8.8.8"
+  - "8.8.4.4"
+  othertod:
+  - "ntp.ubuntu.com"
+  searchdomainsfordns:
+  - "gkeonprem.local"
+blocks:
+  - netmask: "255.255.255.0"
+    gateway: "172.16.10.1"
+    ips:
+    - ip: "172.16.10.11"
+      hostname: "admin-seesaw-1"
+    - ip: "172.16.10.12"
+      hostname: "admin-seesaw-2"
